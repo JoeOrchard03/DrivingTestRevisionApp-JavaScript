@@ -29,8 +29,18 @@ function getRandomNumberInArray(arrayToSearch)
 //When someone visits the home page
 //req is what the user asked for, res is what you send back to the user
 app.get('/', (req, res) => { 
-  res.send('Driving test revision app: Home Page') //res.send is used to send text back to the browser
-})
+  res.send(`
+    <h1>Driving Test App</h1>
+
+    <a href="/questions/1">
+      <button>Start Quiz</button>
+    </a>
+
+    <a href="/questions/random">
+      <button>Random Question</button>
+    </a>
+  `);
+});
 
 //Loads About page text when they go to about page
 app.get('/about', (req, res) => {
