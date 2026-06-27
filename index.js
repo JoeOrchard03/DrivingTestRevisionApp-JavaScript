@@ -1,6 +1,31 @@
 const express = require('express') // Loads the express framework
 const app = express() //Creates the app
 
+const questions = [
+  {
+    question: "What does this sign mean?",
+    answer: "Stop"
+  },
+  {
+    question: "What is the speed limit on a dual carriageway in Wales?",
+    answer: "70mph"
+  },
+  {
+    question: "What lane should you be in to turn right on a one way road?",
+    answer: "Right hand lane"
+  },
+  {
+    question: "What should you do on approach to signal lights?",
+    answer: "Check your mirrors"
+  },
+  
+]
+
+function getRandomNumberInArray(arrayToSearch)
+{
+  return Math.floor(Math.random() * (arrayToSearch.length));
+}
+
 //When someone visits the home page
 //req is what the user asked for, res is what you send back to the user
 app.get('/', (req, res) => { 
@@ -13,18 +38,15 @@ app.get('/about', (req, res) => {
 })
 
 //Loads questions page
-app.get('/questions', (req, res) => {
-  res.json([
-      {
-      question: "What does this sign mean?",
-      answer: "Stop"
-      },
-      {
-      question: "What is the speed limit on a dual carriageway in Wales?",
-      answer: "70mph"
-      }
-    ]
-  )})
+app.get('/questions/:id', (req, res) => {
+  if(req.params.id === "random")
+  {
+    res.send(questions[getRandomNumberInArray(questions)].question);
+  }
+  else{
+    res.send(questions[req.params.id - 1]);
+  }
+})
 
 
 app.listen(3000) // Starts server
