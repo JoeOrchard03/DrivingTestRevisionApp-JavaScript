@@ -1,5 +1,7 @@
 const express = require('express') // Loads the express framework
 const app = express() //Creates the app
+const fs = require('fs') // Loads the file system module
+const path = require('path') // Loads the path module
 
 const questions = [
   {
@@ -51,12 +53,27 @@ app.get('/about', (req, res) => {
 app.get('/questions/:id', (req, res) => {
   if(req.params.id === "random")
   {
-    res.send(questions[getRandomNumberInArray(questions)].question);
+      const filePath = path.join(__dirname, 'ShowMeQuestions.json');
+      const jsonData = fs.readFileSync(filePath, 'utf8');
+      const json = JSON.parse(jsonData);
+      res.send(json[getRandomNumberInArray(json)].question);
   }
   else{
     res.send(questions[req.params.id - 1].question);
   }
 })
+
+
+// //Loads questions page
+// app.get('/questions/:id', (req, res) => {
+//   if(req.params.id === "random")
+//   {
+//     res.send(questions[getRandomNumberInArray(questions)].question);
+//   }
+//   else{
+//     res.send(questions[req.params.id - 1].question);
+//   }
+// })
 
 
 app.listen(3000) // Starts server
