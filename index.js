@@ -54,7 +54,7 @@ app.get('/questions/:id', (req, res) => {
     res.send(questions[getRandomNumberInArray(questions)].question);
   }
   else{
-    res.send(questions[req.params.id - 1]);
+    res.send(questions[req.params.id - 1].question);
   }
 })
 
