@@ -1,5 +1,6 @@
 const express = require('express') // Loads the express framework
 const app = express() //Creates the app
+app.use(express.static('public')); // Serves static files from the public directory
 const fs = require('fs') // Loads the file system module
 const path = require('path') // Loads the path module
 
@@ -7,22 +8,6 @@ function getRandomNumberInArray(arrayToSearch)
 {
   return Math.floor(Math.random() * (arrayToSearch.length));
 }
-
-//When someone visits the home page
-//req is what the user asked for, res is what you send back to the user
-app.get('/', (req, res) => { 
-  res.send(`
-    <h1>Driving Test App</h1>
-
-    <a href="/Quiz/TellMeQuestions/1">
-      <button>Tell Me Questions Quiz</button>
-    </a>
-
-    <a href="/Quiz/ShowMeQuestions/1">
-      <button>Show Me Questions Quiz</button>
-    </a>
-  `);
-});
 
 //Loads About page text when they go to about page
 app.get('/about', (req, res) => {
@@ -47,7 +32,12 @@ app.get('/Quiz/TellMeQuestions/:id', (req, res) => {
     //Check if the index exists in the question list
     if(questionList[index]) 
     {
-      res.send(questionList[index].question);
+      res.json({
+        question: questionList[index].question,
+        answer: questionList[index].answer,
+        distractor_1: questionList[index].distractor_1,
+        distractor_2: questionList[index].distractor_2
+      });
     }
     else 
     {
@@ -81,19 +71,5 @@ app.get('/Quiz/ShowMeQuestions/:id', (req, res) => {
     }
   } 
 })
-
-// //Loads questions page
-// app.get('/questions/:id', (req, res) => {
-//   if(req.params.id === "random")
-//   {
-//       const filePath = path.join(__dirname, 'ShowMeQuestions.json');
-//       const jsonData = fs.readFileSync(filePath, 'utf8');
-//       const json = JSON.parse(jsonData);
-//       res.send(json[getRandomNumberInArray(json)].question);
-//   }
-//   else{
-//     res.send(questions[req.params.id - 1].question);
-//   }
-// })
 
 app.listen(3000) // Starts server
