@@ -1,0 +1,40 @@
+<!DOCTYPE html> <!-- Sets the type of document -->
+<html> 
+
+<head>
+    <title>Driving Test Quiz</title>
+</head>
+
+<body>
+
+    <h1>Tell Me Quiz</h1> 
+    <p id="question">Loading question... </p> <!-- Paragraph where question is displayed -->
+
+    <button id="answer1"></button>
+    <button id="answer2"></button>
+    <button id="answer3"></button>
+    
+
+    <button id="nextQuestion"> <!-- Load Next Question -->
+        Next Question
+    </button>
+
+<script>
+
+    async function loadQuestion()
+    {
+        const response = await fetch("/Quiz/TellMeQuestions/1");
+        const question = await response.json();
+        document.getElementById("question").innerText = question.question;
+        document.getElementById("answer1").innerText = question.answer;
+        document.getElementById("answer2").innerText = question.distractor_1;
+        document.getElementById("answer3").innerText = question.distractor_2;
+    }
+
+    document.addEventListener("DOMContentLoaded", loadQuestion);
+
+</script>
+
+</body>
+
+</html>
