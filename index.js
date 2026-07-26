@@ -22,7 +22,7 @@ app.get('/Quiz/TellMeQuestions/:id', (req, res) => {
   
   if(req.params.id === "random")
   {
-      res.send(questionList[getRandomNumberInArray(questionList)].question);
+    res.json(questionList[getRandomNumberInArray(questionList)]);
   }
   else
   {
@@ -34,9 +34,7 @@ app.get('/Quiz/TellMeQuestions/:id', (req, res) => {
     {
       res.json({
         question: questionList[index].question,
-        answer: questionList[index].answer,
-        distractor_1: questionList[index].distractor_1,
-        distractor_2: questionList[index].distractor_2
+        answers: questionList[index].answers
       });
     }
     else 
@@ -53,7 +51,7 @@ app.get('/Quiz/ShowMeQuestions/:id', (req, res) => {
   
   if(req.params.id === "random")
   {
-      res.send(questionList[getRandomNumberInArray(questionList)].question);
+      res.json(questionList[getRandomNumberInArray(questionList)]);
   }
   else
   {

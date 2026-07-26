@@ -1,86 +1,240 @@
 [
   {
     "question": "1. Tell me how you’d check that the brakes are working before starting a journey.",
-    "answer": "Brakes should not feel spongy or slack. Brakes should be tested as you set off. Vehicle should not pull to one side.",
-    "distractor_1": "Pump the brake pedal ten times while the engine is switched off until it goes completely hard, then start the engine.",
-    "distractor_2": "Visualise the brake pads through the wheel spokes to confirm they have at least 5mm of friction material left."
+    "answers": [
+      {
+        "text": "Brakes should not feel spongy or slack. Brakes should be tested as you set off. Vehicle should not pull to one side.",
+        "correct": true
+      },
+      {
+        "text": "Pump the brake pedal ten times while the engine is switched off until it goes completely hard, then start the engine.",
+        "correct": false
+      },
+      {
+        "text": "Visualise the brake pads through the wheel spokes to confirm they have at least 5mm of friction material left.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "2. Tell me where you’d find the information for the recommended tyre pressures for this car and how tyre pressures should be checked.",
-    "answer": "Manufacturer’s guide, use a reliable pressure gauge, check and adjust pressures when tyres are cold, don’t forget spare tyre, remember to refit valve caps.",
-    "distractor_1": "Look at the maximum inflation pressure stamped on the tyre sidewall and inflate them to that exact number using a foot pump.",
-    "distractor_2": "Check the vehicle logbook (V5C), kick the side of each tyre to check firmness, and adjust the pressure immediately after a long motorway drive."
+    "answers": [
+      {
+        "text": "Manufacturer’s guide, use a reliable pressure gauge, check and adjust pressures when tyres are cold, don’t forget spare tyre, remember to refit valve caps.",
+        "correct": true
+      },
+      {
+        "text": "Look at the maximum inflation pressure stamped on the tyre sidewall and inflate them to that exact number using a foot pump.",
+        "correct": false
+      },
+      {
+        "text": "Check the vehicle logbook (V5C), kick the side of each tyre to check firmness, and adjust the pressure immediately after a long motorway drive.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "3. Tell me how you make sure your head restraint is correctly adjusted so it provides the best protection in the event of a crash.",
-    "answer": "The head restraint should be adjusted so the rigid part of the head restraint is at least as high as the eye or top of the ears, and as close to the back of the head as is comfortable. Note: Some restraints might not be adjustable.",
-    "distractor_1": "The top of the restraint should line up with the base of your neck so your head can tilt backwards fully during an impact.",
-    "distractor_2": "Adjust it as low as possible to maximize rear visibility through the rearview mirror, ensuring it touches your shoulders."
+    "answers": [
+      {
+        "text": "The head restraint should be adjusted so the rigid part of the head restraint is at least as high as the eye or top of the ears, and as close to the back of the head as is comfortable. Note: Some restraints might not be adjustable.",
+        "correct": true
+      },
+      {
+        "text": "The top of the restraint should line up with the base of your neck so your head can tilt backwards fully during an impact.",
+        "correct": false
+      },
+      {
+        "text": "Adjust it as low as possible to maximize rear visibility through the rearview mirror, ensuring it touches your shoulders.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "4. Tell me how you’d check the tyres to ensure that they have sufficient tread depth and that their general condition is safe to use on the road.",
-    "answer": "No cuts and bulges, 1.6mm of tread depth across the central three-quarters of the breadth of the tyre, and around the entire outer circumference of the tyre.",
-    "distractor_1": "Ensure there are no stones stuck in the outer tread, and check that the depth is at least 1.0mm across the outer edges.",
-    "distractor_2": "Rub your hand over the tread surface to feel for uneven wear, ensuring the tyre has at least 3mm of depth across the outer half."
+    "answers": [
+      {
+        "text": "No cuts and bulges, 1.6mm of tread depth across the central three-quarters of the breadth of the tyre, and around the entire outer circumference of the tyre.",
+        "correct": true
+      },
+      {
+        "text": "Ensure there are no stones stuck in the outer tread, and check that the depth is at least 1.0mm across the outer edges.",
+        "correct": false
+      },
+      {
+        "text": "Rub your hand over the tread surface to feel for uneven wear, ensuring the tyre has at least 3mm of depth across the outer half.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "5. Tell me how you’d check that the headlights and tail lights are working. You don’t need to exit the vehicle.",
-    "answer": "Explain you’d operate the switch (turn on ignition if necessary), then walk round vehicle (as this is a ‘tell me’ question, you don’t need to physically check the lights).",
-    "distractor_1": "Turn the light switch to the auto position and look for the green dashboard illumination symbol to confirm both ends are working.",
-    "distractor_2": "Switch on the hazard warning lights and look for reflections in the garage door ahead of you to verify the main bulbs."
+    "answers": [
+      {
+        "text": "Explain you’d operate the switch (turn on ignition if necessary), then walk round vehicle (as this is a ‘tell me’ question, you don’t need to physically check the lights).",
+        "correct": true
+      },
+      {
+        "text": "Turn the light switch to the auto position and look for the green dashboard illumination symbol to confirm both ends are working.",
+        "correct": false
+      },
+      {
+        "text": "Switch on the hazard warning lights and look for reflections in the garage door ahead of you to verify the main bulbs.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "6. Tell me how you’d know if there was a problem with your anti-lock braking system.",
-    "answer": "Warning light should illuminate if there is a fault with the anti-lock braking system.",
-    "distractor_1": "The brake pedal will vibrate every time you bring the car to a smooth stop at a junction.",
-    "distractor_2": "A loud screeching noise will emit from the front wheels whenever you apply the footbrake firmly."
+    "answers": [
+      {
+        "text": "Warning light should illuminate if there is a fault with the anti-lock braking system.",
+        "correct": true
+      },
+      {
+        "text": "The brake pedal will vibrate every time you bring the car to a smooth stop at a junction.",
+        "correct": false
+      },
+      {
+        "text": "A loud screeching noise will emit from the front wheels whenever you apply the footbrake firmly.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "7. Tell me how you’d check the direction indicators are working. You don’t need to exit the vehicle.",
-    "answer": "Explain you’d operate the switch (turn on ignition if necessary), then walk round vehicle (as this is a ‘tell me’ question, you don’t need to physically check the lights).",
-    "distractor_1": "Listen to the clicking rhythm of the indicator stalk inside the cabin; if it clicks slowly, all bulbs are working perfectly.",
-    "distractor_2": "Push the indicator stalk up and down rapidly while checking your left and right door mirrors for a reflection."
+    "answers": [
+      {
+        "text": "Explain you’d operate the switch (turn on ignition if necessary), then walk round vehicle (as this is a ‘tell me’ question, you don’t need to physically check the lights).",
+        "correct": true
+      },
+      {
+        "text": "Listen to the clicking rhythm of the indicator stalk inside the cabin; if it clicks slowly, all bulbs are working perfectly.",
+        "correct": false
+      },
+      {
+        "text": "Push the indicator stalk up and down rapidly while checking your left and right door mirrors for a reflection.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "8. Tell me how you’d check the brake lights are working on this car.",
-    "answer": "Explain you’d operate the brake pedal, make use of reflections in windows or doors, or ask someone to help.",
-    "distractor_1": "Switch on the rear fog lights switch, which automatically illuminates the brake light circuit for a visual system check.",
-    "distractor_2": "Turn on the ignition, press the brake pedal down fully, then exit the vehicle to look at the back of the car."
+    "answers": [
+      {
+        "text": "Explain you’d operate the brake pedal, make use of reflections in windows or doors, or ask someone to help.",
+        "correct": true
+      },
+      {
+        "text": "Switch on the rear fog lights switch, which automatically illuminates the brake light circuit for a visual system check.",
+        "correct": false
+      },
+      {
+        "text": "Turn on the ignition, press the brake pedal down fully, then exit the vehicle to look at the back of the car.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "9. Tell me how you’d check the power-assisted steering is working before starting a journey.",
-    "answer": "If the steering becomes heavy, the system may not be working properly. Before starting a journey, 2 simple checks can be made. Gentle pressure on the steering wheel, maintained while the engine is started, should result in a slight but noticeable movement as the system begins to operate. Alternatively turning the steering wheel just after moving off will give an immediate indication that the power assistance is functioning.",
-    "distractor_1": "Visually inspect the steering column under the dashboard for fluid leaks, then turn the steering wheel from lock to lock with the handbrake off.",
-    "distractor_2": "Check that the steering wheel spins completely freely with no resistance at all when the engine is switched off and ignition is key-out."
+    "answers": [
+      {
+        "text": "If the steering becomes heavy, the system may not be working properly. Before starting a journey, 2 simple checks can be made. Gentle pressure on the steering wheel, maintained while the engine is started, should result in a slight but noticeable movement as the system begins to operate. Alternatively turning the steering wheel just after moving off will give an immediate indication that the power assistance is functioning.",
+        "correct": true
+      },
+      {
+        "text": "Visually inspect the steering column under the dashboard for fluid leaks, then turn the steering wheel from lock to lock with the handbrake off.",
+        "correct": false
+      },
+      {
+        "text": "Check that the steering wheel spins completely freely with no resistance at all when the engine is switched off and ignition is key-out.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "10. Tell me how you’d switch on the rear fog light(s) and explain when you’d use it/them. You don’t need to exit the vehicle.",
-    "answer": "Operate switch (turn on dipped headlights and ignition if necessary). Check warning light is on. Explain use.",
-    "distractor_1": "Turn the headlight switch to the sidelight position, pull the stalk twice, and explain that you use them whenever it is raining.",
-    "distractor_2": "Activate the hazard lights switch, which overrides the fog lights, and explain they must be used on unlit country roads at night."
+    "answers": [
+      {
+        "text": "Operate switch (turn on dipped headlights and ignition if necessary). Check warning light is on. Explain use.",
+        "correct": true
+      },
+      {
+        "text": "Turn the headlight switch to the sidelight position, pull the stalk twice, and explain that you use them whenever it is raining.",
+        "correct": false
+      },
+      {
+        "text": "Activate the hazard lights switch, which overrides the fog lights, and explain they must be used on unlit country roads at night.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "11. Tell me how you switch your headlight from dipped to main beam and explain how you’d know the main beam is on.",
-    "answer": "Operate switch (with ignition or engine on if necessary), check with main beam warning light.",
-    "distractor_1": "Twist the outer dial of the indicator stalk forward twice, then look for a green headlight symbol on the dashboard.",
-    "distractor_2": "Press the fog light switch inwards until it clicks, then check that the road ahead is illuminated at a wider angle."
+    "answers": [
+      {
+        "text": "Operate switch (with ignition or engine on if necessary), check with main beam warning light.",
+        "correct": true
+      },
+      {
+        "text": "Twist the outer dial of the indicator stalk forward twice, then look for a green headlight symbol on the dashboard.",
+        "correct": false
+      },
+      {
+        "text": "Press the fog light switch inwards until it clicks, then check that the road ahead is illuminated at a wider angle.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "12. Open the bonnet and tell me how you’d check that the engine has sufficient oil.",
-    "answer": "Identify dipstick/oil level indicator, describe check of oil level against the minimum and maximum markers.",
-    "distractor_1": "Remove the oil filler cap on top of the engine block, look inside with a torch, and make sure the oil is level with the thread.",
-    "distractor_2": "Locate the clear plastic oil reservoir near the battery, then check the fluid level directly through the side of the tank."
+    "answers": [
+      {
+        "text": "Identify dipstick/oil level indicator, describe check of oil level against the minimum and maximum markers.",
+        "correct": true
+      },
+      {
+        "text": "Remove the oil filler cap on top of the engine block, look inside with a torch, and make sure the oil is level with the thread.",
+        "correct": false
+      },
+      {
+        "text": "Locate the clear plastic oil reservoir near the battery, then check the fluid level directly through the side of the tank.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "13. Open the bonnet and tell me how you’d check that the engine has sufficient engine coolant.",
-    "answer": "Identify high and low level markings on header tank where fitted or radiator filler cap, and describe how to top up to correct level.",
-    "distractor_1": "Unscrew the radiator cap while the engine is hot to see if the fluid rises up to the top of the filler neck.",
-    "distractor_2": "Find the glass sight window on the side of the engine block and check that the green or pink liquid fills it halfway."
+    "answers": [
+      {
+        "text": "Identify high and low level markings on header tank where fitted or radiator filler cap, and describe how to top up to correct level.",
+        "correct": true
+      },
+      {
+        "text": "Unscrew the radiator cap while the engine is hot to see if the fluid rises up to the top of the filler neck.",
+        "correct": false
+      },
+      {
+        "text": "Find the glass sight window on the side of the engine block and check that the green or pink liquid fills it halfway.",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "14. Open the bonnet and tell me how you’d check that you have a safe level of hydraulic brake fluid.",
-    "answer": "Identify reservoir, check level against high and low markings.",
-    "distractor_1": "Remove the dipstick from the brake master cylinder, wipe it clean, reinsert it, and read the level against the notches.",
-    "distractor_2": "Look at the clear braided hoses leading to the front wheels to ensure they are completely filled with fluid and contain no air blocks."
+    "answers": [
+      {
+        "text": "Identify reservoir, check level against high and low markings.",
+        "correct": true
+      },
+      {
+        "text": "Remove the dipstick from the brake master cylinder, wipe it clean, reinsert it, and read the level against the notches.",
+        "correct": false
+      },
+      {
+        "text": "Look at the clear braided hoses leading to the front wheels to ensure they are completely filled with fluid and contain no air blocks.",
+        "correct": false
+      }
+    ]
   }
 ]
