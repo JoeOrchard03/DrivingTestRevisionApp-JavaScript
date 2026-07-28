@@ -70,4 +70,17 @@ app.get('/Quiz/ShowMeQuestions/:id', (req, res) => {
   } 
 })
 
+app.get('/Quiz/TellMeQuestions', (req, res) => { //Creates URL end point
+  const filePath = path.join(__dirname, 'TellMeQuestions.json'); //Finds Json file
+  fs.readFile(filePath, 'utf8', (err, data) => { //Opens and reads the file
+    if (err) {
+      res.status(500).send('Error reading questions file');
+      return;
+    }
+
+    const questionList = JSON.parse(data); //Turns text into a Javascript object/array
+    res.json(questionList); //Returns data to the client as JSON
+  });
+});
+
 app.listen(3000) // Starts server

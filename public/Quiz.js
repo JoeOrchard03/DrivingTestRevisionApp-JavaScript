@@ -1,5 +1,6 @@
 let currentQuestion; /* Initialises current question */
 let currentQuestionId = 1;
+let totalQuestions;
 
 async function loadQuestion(questionToLoad = "1")
 {
@@ -30,14 +31,16 @@ async function loadQuestion(questionToLoad = "1")
 function GetNextQuestionNumber()
 {
     currentQuestionId++;
-    console.log("Current question: " + currentQuestionId);
 
-    if (currentQuestionId > 14)  
+    if (currentQuestionId > totalQuestions)  
     {
         console.log("No more questions available.");
+        currentQuestionId = totalQuestions; // Reset to the last question
+        return;
     }
-
-    loadQuestion(currentQuestionId); 
+    
+    console.log("Current question: " + currentQuestionId);
+    loadQuestion(currentQuestionId);   
 }
 
 function checkAnswer() // Checks the selected answer and provides feedback
@@ -70,8 +73,24 @@ function checkAnswer() // Checks the selected answer and provides feedback
     }
 }
 
+async function getTotalQuestions() // Gets the total number of questions in the quiz
+{
+    const response = await fetch(`/Quiz/TellMeQuestions`);
+    const TellMeQuestions = await response.json();
+    
+    totalQuestions = TellMeQuestions.length;
+    console.log(totalQuestions + " questions in the quiz.");
+}
+
+async function init()
+{
+    await getTotalQuestions();
+    await loadQuestion();
+}
+
+init();
+
 // Since we are using 'defer' in the HTML script tag, we can instantly run 
 // our code and bind listeners safely because the DOM is fully loaded.
-loadQuestion();
 document.getElementById("nextQuestion").addEventListener("click", GetNextQuestionNumber);
 document.getElementById("submitAnswer").addEventListener("click", checkAnswer);
