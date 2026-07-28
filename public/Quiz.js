@@ -1,8 +1,9 @@
 let currentQuestion; /* Initialises current question */
+let currentQuestionId = 1;
 
-async function loadQuestion()
+async function loadQuestion(questionToLoad = "1")
 {
-    const response = await fetch("/Quiz/TellMeQuestions/1"); /* Loads the first question */
+    const response = await fetch(`/Quiz/TellMeQuestions/${questionToLoad}`); /* Loads the specified question */
     const question = await response.json();
 
     document.getElementById("feedback").innerText = ""; // Clears the feedback text when loading a new question
@@ -26,6 +27,19 @@ async function loadQuestion()
     });
 }
 
+function GetNextQuestionNumber()
+{
+    currentQuestionId++;
+    console.log("Current question: " + currentQuestionId);
+
+    if (currentQuestionId > 14)  
+    {
+        console.log("No more questions available.");
+    }
+
+    loadQuestion(currentQuestionId); 
+}
+
 function checkAnswer() // Checks the selected answer and provides feedback
 {
     const selected = document.querySelector('input[name="answer"]:checked');
@@ -46,7 +60,12 @@ function checkAnswer() // Checks the selected answer and provides feedback
     }
     else
     {
-        feedback.innerText = "Incorrect!";
+        //Find the correct answer from the current question's answers array
+        const correctAnswer = currentQuestion.answers.find(answer => answer.correct === true);
+        const correctAnswerText = correctAnswer.text;
+
+        //Print the correct answer
+        feedback.innerText = `Incorrect!\n\n The correct answer is:\n ${correctAnswerText}`;
         feedback.style.color = "red";
     }
 }
@@ -54,5 +73,5 @@ function checkAnswer() // Checks the selected answer and provides feedback
 // Since we are using 'defer' in the HTML script tag, we can instantly run 
 // our code and bind listeners safely because the DOM is fully loaded.
 loadQuestion();
-document.getElementById("nextQuestion").addEventListener("click", loadQuestion);
+document.getElementById("nextQuestion").addEventListener("click", GetNextQuestionNumber);
 document.getElementById("submitAnswer").addEventListener("click", checkAnswer);
