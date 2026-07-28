@@ -14,73 +14,49 @@ app.get('/about', (req, res) => {
   res.send('This is a driving test revision app that helps people prepare for their driving test')
 })
 
-//Loads questions page
-app.get('/Quiz/TellMeQuestions/:id', (req, res) => {
-  const filePath = path.join(__dirname, 'TellMeQuestions.json');
-  const jsonData = fs.readFileSync(filePath, 'utf8');
-  const questionList = JSON.parse(jsonData);
-  
-  if(req.params.id === "random")
-  {
-    res.json(questionList[getRandomNumberInArray(questionList)]);
+
+function loadQuizQuestionsFromFile(fileName)
+{
+  return async (req, res) => {
+    const questionList = await LoadQuestionListFromFile(fileName);
+
+    if(req.params.id === "random")
+      {
+        res.json(questionList[getRandomNumberInArray(questionList)]);
+      }
+      else
+      {
+        const index = parseInt(req.params.id) - 1;
+
+        if(questionList[index])
+        {
+          res.json(questionList[index]);
+        }
+        else
+        {
+          res.status(404).send('Question not found');
+        }
+      }
   }
-  else
-  {
-    //Get the first index of the Question list and subtract 1 to get the correct index for the array
-    const index = parseInt(req.params.id) - 1;
+}
 
-    //Check if the index exists in the question list
-    if(questionList[index]) 
-    {
-      res.json({
-        question: questionList[index].question,
-        answers: questionList[index].answers
-      });
-    }
-    else 
-    {
-      res.status(404).send('Question not found');
-    }
-  }
-})
+app.get('/Quiz/TellMeQuestions/:id', loadQuizQuestionsFromFile('TellMeQuestions.json'));
+app.get('/Quiz/ShowMeQuestions/:id', loadQuizQuestionsFromFile('ShowMeQuestions.json'));
 
-app.get('/Quiz/ShowMeQuestions/:id', (req, res) => {
-  const filePath = path.join(__dirname, 'ShowMeQuestions.json');
-  const jsonData = fs.readFileSync(filePath, 'utf8');
-  const questionList = JSON.parse(jsonData);
-  
-  if(req.params.id === "random")
-  {
-      res.json(questionList[getRandomNumberInArray(questionList)]);
-  }
-  else
-  {
-    //Get the first index of the Question list and subtract 1 to get the correct index for the array
-    const index = parseInt(req.params.id) - 1;
+// Loads the json files that have the questions based on the file name provided and returns the parsed JSON data
+async function LoadQuestionListFromFile(fileName)
+{
+  const filePath = path.join(__dirname, "Data", fileName);
+  const data = await fs.promises.readFile(filePath, 'utf8');
+  return JSON.parse(data);
+}
 
-    //Check if the index exists in the question list
-    if(questionList[index]) 
-    {
-      res.send(questionList[index].question);
-    }
-    else 
-    {
-      res.status(404).send('Question not found');
-    }
-  } 
-})
+app.get('/Quiz/ShowMeQuestions', async(req, res) => {
+    res.json(await LoadQuestionListFromFile('ShowMeQuestions.json'));
+});
 
-app.get('/Quiz/TellMeQuestions', (req, res) => { //Creates URL end point
-  const filePath = path.join(__dirname, 'TellMeQuestions.json'); //Finds Json file
-  fs.readFile(filePath, 'utf8', (err, data) => { //Opens and reads the file
-    if (err) {
-      res.status(500).send('Error reading questions file');
-      return;
-    }
-
-    const questionList = JSON.parse(data); //Turns text into a Javascript object/array
-    res.json(questionList); //Returns data to the client as JSON
-  });
+app.get('/Quiz/TellMeQuestions', async (req, res) => {
+    res.json(await LoadQuestionListFromFile('TellMeQuestions.json'));
 });
 
 app.listen(3000) // Starts server
