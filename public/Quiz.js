@@ -106,5 +106,6 @@ init();
 
 // Since we are using 'defer' in the HTML script tag, we can instantly run 
 // our code and bind listeners safely because the DOM is fully loaded.
+document.getElementById("homeButton").addEventListener("click", () => { window.location.href = "/"; });
 document.getElementById("nextQuestion").addEventListener("click", GetNextQuestionNumber);
 document.getElementById("submitAnswer").addEventListener("click", checkAnswer);
