@@ -1,6 +1,7 @@
 let currentQuestion; /* Initialises current question */
 let currentQuestionId = 1;
 let totalQuestions;
+let score = 0; /* Initialises score */
 
 async function loadQuestion(questionToLoad = "1")
 {
@@ -8,6 +9,7 @@ async function loadQuestion(questionToLoad = "1")
     const question = await response.json();
 
     document.getElementById("feedback").innerText = ""; // Clears the feedback text when loading a new question
+    document.getElementById("submitAnswer").disabled = false; // Enables the submit button when loading a new question
 
     currentQuestion = question; /* Store current question */ 
 
@@ -60,6 +62,9 @@ function checkAnswer() // Checks the selected answer and provides feedback
     {
         feedback.innerText = "Correct!";
         feedback.style.color = "green";
+
+        score++; // Increment score for correct answer
+        document.getElementById("score").innerText = `Score: ${score}/${totalQuestions}`; // Update score display
     }
     else
     {
@@ -71,6 +76,8 @@ function checkAnswer() // Checks the selected answer and provides feedback
         feedback.innerText = `Incorrect!\n\n The correct answer is:\n ${correctAnswerText}`;
         feedback.style.color = "red";
     }
+
+    document.getElementById("submitAnswer").disabled = true; // Disable the submit button after a correct answer
 }
 
 async function getTotalQuestions() // Gets the total number of questions in the quiz
@@ -82,9 +89,16 @@ async function getTotalQuestions() // Gets the total number of questions in the 
     console.log(totalQuestions + " questions in the quiz.");
 }
 
+async function setScore() // Sets the initial score to 0
+{
+    score = 0;
+    document.getElementById("score").innerText = `Score: ${score}/${totalQuestions}`; // Update score display
+}
+
 async function init()
 {
     await getTotalQuestions();
+    await setScore();
     await loadQuestion();
 }
 
