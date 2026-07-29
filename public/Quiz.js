@@ -10,6 +10,7 @@ async function loadQuestion(questionToLoad = "1")
 
     document.getElementById("feedback").innerText = ""; // Clears the feedback text when loading a new question
     document.getElementById("submitAnswer").disabled = false; // Enables the submit button when loading a new question
+    document.getElementById("nextQuestion").disabled = true; // Disables the next question button when loading a new question
 
     currentQuestion = question; /* Store current question */ 
 
@@ -37,7 +38,8 @@ function GetNextQuestionNumber()
     if (currentQuestionId > totalQuestions)  
     {
         console.log("No more questions available.");
-        currentQuestionId = totalQuestions; // Reset to the last question
+        //currentQuestionId = totalQuestions; // Reset to the last question
+        displayFinalScore();
         return;
     }
     
@@ -78,6 +80,39 @@ function checkAnswer() // Checks the selected answer and provides feedback
     }
 
     document.getElementById("submitAnswer").disabled = true; // Disable the submit button after a correct answer
+    document.getElementById("nextQuestion").disabled = false; // Enable the next question button after a correct answer
+}
+
+function displayFinalScore()
+{
+    const feedback = document.getElementById("feedback");
+
+    document.getElementById("radioButtons").style.display = "none"; // Hide the radio buttons
+    document.getElementById("submitAnswer").style.display = "none"; // Hide the submit button
+    document.getElementById("nextQuestion").style.display = "none"; // Hide the next question button
+    document.getElementById("score").style.display = "none"; // Hide the score display
+    document.getElementById("question").style.display = "none"; // Hide the question text
+
+    switch(true)
+    {
+        case score === 0:
+            feedback.innerText = `You scored ${score}/${totalQuestions}. Better luck next time!`;
+            break;
+        case score < totalQuestions / 2:
+            feedback.innerText = `You scored ${score}/${totalQuestions}. Keep practicing!`;
+            break;
+        case score === totalQuestions / 2:
+            feedback.innerText = `You scored ${score}/${totalQuestions}. Not bad!`;
+            break;
+        case score > totalQuestions / 2 && score < totalQuestions:
+            feedback.innerText = `You scored ${score}/${totalQuestions}. Great job!`;
+            break;
+        case score === totalQuestions:
+            feedback.innerText = `You scored ${score}/${totalQuestions}. Perfect score! Well done!`;
+            break;
+        default:
+            feedback.innerText = `You scored ${score}/${totalQuestions}.`;
+    }
 }
 
 async function getTotalQuestions() // Gets the total number of questions in the quiz
