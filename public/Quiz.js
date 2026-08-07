@@ -71,7 +71,7 @@ function checkAnswer() // Checks the selected answer and provides feedback
     else
     {
         //Find the correct answer from the current question's answers array
-        const correctAnswer = currentQuestion.answers.find(answer => answer.correct === true);
+        const correctAnswer = currentQuestion.answers.find(answer => answer.correct === true || answer.correct === "true");
         const correctAnswerText = correctAnswer.text;
 
         //Print the correct answer
@@ -93,18 +93,20 @@ function displayFinalScore()
     document.getElementById("score").style.display = "none"; // Hide the score display
     document.getElementById("question").style.display = "none"; // Hide the question text
 
+    const halfScore = totalQuestions / 2;
+
     switch(true)
     {
         case score === 0:
             feedback.innerText = `You scored ${score}/${totalQuestions}. Better luck next time!`;
             break;
-        case score < totalQuestions / 2:
+        case score < halfScore:
             feedback.innerText = `You scored ${score}/${totalQuestions}. Keep practicing!`;
             break;
-        case score === totalQuestions / 2:
+        case score === halfScore:
             feedback.innerText = `You scored ${score}/${totalQuestions}. Not bad!`;
             break;
-        case score > totalQuestions / 2 && score < totalQuestions:
+        case score > halfScore && score < totalQuestions:
             feedback.innerText = `You scored ${score}/${totalQuestions}. Great job!`;
             break;
         case score === totalQuestions:
