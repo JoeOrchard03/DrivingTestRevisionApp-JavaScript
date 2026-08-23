@@ -6,7 +6,7 @@
     <title>Driving Test Quiz</title>
     <link rel="stylesheet" href="./Quiz.css"> <!-- Loads the Quiz.css stylesheet when the page is loaded -->
     <script src="./Quiz.js" defer></script> <!-- Loads the Quiz.js script when the page is loaded -->
-    <script src="./TellMeQuiz.js" defer></script> <!-- Loads the TellMeQuiz.js script when the page is loaded -->
+    <script src="./ShowMeQuiz.js" defer></script> <!-- Loads the ShowMeQuiz.js script when the page is loaded -->
 </head>
 
 <body>
@@ -15,34 +15,23 @@
         Home
     </button>
 
-    <h1>Tell Me Quiz</h1> 
-    
+    <h1>Show Me Quiz</h1> 
     <p id="score">Score: 0</p> <!-- Paragraph where score is displayed -->
 
     <p id="question">Loading question... </p> <!-- Paragraph where question is displayed -->
 
-    <!-- Radio buttons for multiple choice answers -->
-    <div id = radioButtons>
+    <!-- Answer images -->
+    <div id = "imageAnswers">
+        <img id="image1"
+             class="show-me-answer"
+             src=""
+             alt="Answer option 1">
 
-        <label for="answer1">
-            <input type="radio" name="answer" id="answer1" value="0">
-            <span id="label1"></span>
-        </label>
-
-        <label for="answer2">
-            <input type="radio" name="answer" id="answer2" value="1">
-            <span id="label2"></span>
-        </label>
-
-        <label for="answer3">
-            <input type="radio" name="answer" id="answer3" value="2">
-            <span id="label3"></span>
-        </label>
-        
+        <img id="image2"
+             class="show-me-answer"
+             src=""
+             alt="Answer option 2">
     </div>
-    
-
-    <button id="submitAnswer">Submit</button>
 
     <p id="feedback"></p>
 

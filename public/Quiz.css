@@ -1,0 +1,197 @@
+/* General page styling */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 30px;
+
+    text-align: center;
+    color: #222;
+}
+
+
+/* Main heading */
+
+h1 {
+    margin-bottom: 10px;
+}
+
+
+/* Score */
+
+#score {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Question */
+
+#question {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+
+/* Feedback */
+
+#feedback {
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 25px;
+    margin: 20px;
+}
+
+
+/* Buttons */
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #333;
+    color: white;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+
+/* Home button */
+
+#homeButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+
+/* Show Me quiz images */
+
+#imageAnswers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    margin: 30px auto;
+}
+
+
+.show-me-answer {
+    width: 250px;
+    height: 250px;
+
+    object-fit: cover;
+
+    border: 5px solid transparent;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.show-me-answer:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.show-me-answer.correct {
+    border-color: green;
+}
+
+
+.show-me-answer.incorrect {
+    border-color: red;
+}
+
+
+/* Tell Me quiz */
+
+#radioButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 30px auto;
+}
+
+#radioButtons label {
+    display: flex;
+    align-items: center;
+
+    width: 400px;
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border: 2px solid #ddd;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#radioButtons label:hover {
+    background-color: #eee;
+}
+
+#radioButtons input {
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    #imageAnswers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .show-me-answer {
+        width: 220px;
+        height: 220px;
+    }
+
+    #radioButtons label {
+        width: 80%;
+    }
+
+    #question {
+        font-size: 18px;
+    }
+
+}

@@ -1,30 +1,100 @@
 [
   {
     "question": "1. When it’s safe to do so, can you show me how you wash and clean the rear windscreen?",
-    "answer": "N/A"
+    "answers":
+    [
+      {
+        "image": "/images/ShowMeQuestions/WashWindscreenStalk.jpg",
+        "correct": true
+      },
+      {
+        "image": "/images/ShowMeQuestions/HeadlightControls.jpg",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "2. When it’s safe to do so, can you show me how you wash and clean the front windscreen?",
-    "answer": "N/A"
+    "answers":
+    [
+      {
+        "image": "/images/ShowMeQuestions/WashWindscreenStalk.jpg",
+        "correct": true
+      },
+      {
+        "image": "/images/ShowMeQuestions/FrontWindscreenDemist.png",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "3. When it’s safe to do so, can you show me how you’d switch on your dipped headlights?",
-    "answer": "N/A"
+    "answers":
+    [
+      {
+        "image": "/images/ShowMeQuestions/HeadlightControls.jpg",
+        "correct": true
+      },
+      {
+        "image": "/images/ShowMeQuestions/WashWindscreenStalk.jpg",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "4. When it’s safe to do so, can you show me how you’d set the rear demister?",
-    "answer": "N/A"
+    "answers":
+    [
+      {
+        "image": "/images/ShowMeQuestions/RearWindscreenDemister.jpg",
+        "correct": true
+      },
+      {
+        "image": "/images/ShowMeQuestions/FrontWindscreenDemist.png",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "5. When it’s safe to do so, can you show me how you’d operate the horn?",
-    "answer": "N/A"
+    "answers":
+    [
+      {
+        "image": "/images/ShowMeQuestions/Horn.png",
+        "correct": true
+      },
+      {
+        "image": "/images/ShowMeQuestions/FrontWindscreenDemist.png",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "6. When it’s safe to do so, can you show me how you’d demist the front windscreen?",
-    "answer": "N/A"
+    "answers":
+    [
+      {
+        "image": "/images/ShowMeQuestions/FrontWindscreenDemist.png",
+        "correct": true
+      },
+      {
+        "image": "/images/ShowMeQuestions/RearWindscreenDemister.jpg",
+        "correct": false
+      }
+    ]
   },
   {
     "question": "7. When it’s safe to do so, can you show me how you’d open and close the side window?",
-    "answer": "N/A"
+    "answers":
+    [
+      {
+        "image": "/images/ShowMeQuestions/OpenWindowButton.jpg",
+        "correct": true
+      },
+      {
+        "image": "/images/ShowMeQuestions/HeadlightControls.jpg",
+        "correct": false
+      }
+    ]
   }
 ]
